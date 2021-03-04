@@ -3,6 +3,9 @@ kind: Component
 metadata:
   name: www-artist
   description: Artist main website
+  annotations:
+    github.com/project-slug: backstage/backstage
+    backstage.io/techdocs-ref: url:https://github.com/backstage/backstage
 spec:
   type: website
   lifecycle: production
