@@ -7,7 +7,7 @@ metadata:
     - store
     - rest
   links:
-    - url: http://bhp-coverage-ohbs-msapps-prod.origin-ctc-core.optum.com/swagger-ui.html
+    - url: https://github.com/swagger-api/swagger-petstore
       title: GitHub Repo
       icon: github
     - url: https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/petstore.yaml
@@ -25,10 +25,10 @@ spec:
       license:
         name: MIT
     servers:
-      - url: http://bhp-coverage-ohbs-msapps-prod.origin-ctc-core.optum.com/swagger-ui.html
+      - url: http://petstore.swagger.io/v1
     paths:
-      /memberelig/read:
-        post:
+      /pets:
+        get:
           summary: List all pets
           operationId: listPets
           tags:
