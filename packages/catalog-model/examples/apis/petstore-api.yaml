@@ -25,10 +25,10 @@ spec:
       license:
         name: MIT
     servers:
-      - url: http://petstore.swagger.io/v1
+      - url: http://bhp-coverage-ohbs-msapps-prod.origin-ctc-core.optum.com/swagger-ui.html
     paths:
-      /pets:
-        get:
+      /memberelig/read:
+        post:
           summary: List all pets
           operationId: listPets
           tags:
