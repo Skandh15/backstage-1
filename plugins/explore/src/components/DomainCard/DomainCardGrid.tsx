@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { DomainEntity } from '@backstage/catalog-model';
-import { Grid } from '@material-ui/core';
+import { Grid, makeStyles } from '@material-ui/core';
 import React from 'react';
 import { DomainCard } from '.';
 
@@ -22,12 +22,22 @@ type DomainCardGridProps = {
   entities: DomainEntity[];
 };
 
-export const DomainCardGrid = ({ entities }: DomainCardGridProps) => (
-  <Grid container spacing={4}>
-    {entities.map((e, i) => (
-      <Grid item xs={12} md={3} key={i}>
-        <DomainCard entity={e} />
-      </Grid>
-    ))}
-  </Grid>
-);
+const useStyles = makeStyles(theme => ({
+  grid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(22em, 1fr))',
+    gridAutoRows: '1fr',
+    gridGap: theme.spacing(2),
+  },
+}));
+
+export const DomainCardGrid = ({ entities }: DomainCardGridProps) => {
+  const classes = useStyles();
+  return (
+    <div className={classes.grid}>
+      {entities.map((e, i) => (
+        <DomainCard key={i} entity={e} />
+      ))}
+    </div>
+  );
+};
